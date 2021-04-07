@@ -1,6 +1,6 @@
 import React from "react";
 import './App.css';
-
+import steps from "./components/steps"
 const tempMin = -20
 const tempMax = 40
 const heartMin = 80
@@ -15,6 +15,7 @@ class App extends React.Component {
     return (
       <div class="container-fluid">
         <div class="row">
+          
           <p>
           
             Heart : 80
