@@ -15,13 +15,10 @@ class App extends React.Component {
     return (
       <div class="container-fluid">
         <div class="row">
-          
-          <p>
-          
-            Heart : 80
-            Temperature : -20
-            Steps : 0
-          </p>
+          <img src="./C:\Users\acer\Desktop\Konexio\react\chapitre-01\elsy\src\baseline_directions_walk_black_24dp.png" ></img>
+          <p>Heart : {heartMin}</p>
+          <p>Temperature : {tempMin}</p>
+          <p>Steps : {stepsMin}</p>
         </div>
       </div>
     );
