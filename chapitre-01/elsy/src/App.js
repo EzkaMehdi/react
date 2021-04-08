@@ -1,6 +1,9 @@
 import React from "react";
 import './App.css';
-import steps from "./components/steps"
+import Steps from "./components/steps.jsx"
+import '../src/styles/global.css';
+
+
 const tempMin = -20
 const tempMax = 40
 const heartMin = 80
@@ -14,8 +17,8 @@ class App extends React.Component {
   render() {
     return (
       <div class="container-fluid">
-        <div class="row">
-          <img src="./C:\Users\acer\Desktop\Konexio\react\chapitre-01\elsy\src\baseline_directions_walk_black_24dp.png" ></img>
+        <div class="row"> <Steps />
+          
           <p>Heart : {heartMin}</p>
           <p>Temperature : {tempMin}</p>
           <p>Steps : {stepsMin}</p>
