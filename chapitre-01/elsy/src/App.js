@@ -7,7 +7,7 @@ const tempMax = 40;
 const heartMin = 80;
 const heartMax = 180;
 const stepsMin = 0;
-const stepsMax = 50000;
+const stepsMax = 3000;
 
 class App extends React.Component {
   constructor() {
@@ -22,6 +22,13 @@ class App extends React.Component {
     this.onStepsChange = this.onStepsChange.bind(this)
     this.onTemperatureChange = this.onTemperatureChange.bind(this)
   }
+
+  calculateWater(e) {
+    console.log(e.target);
+    this.setState({water : e.target.value}) 
+  }
+
+
   onStepsChange(e) {
     console.log(e.target);
     this.setState({steps : e.target.value}) 
