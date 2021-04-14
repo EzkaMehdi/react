@@ -7,7 +7,7 @@ const tempMax = 40;
 const heartMin = 80;
 const heartMax = 180;
 const stepsMin = 0;
-const stepsMax = 3000;
+const stepsMax = 50000;
 
 class App extends React.Component {
   constructor() {
@@ -21,33 +21,53 @@ class App extends React.Component {
     this.onHeartChange = this.onHeartChange.bind(this)
     this.onStepsChange = this.onStepsChange.bind(this)
     this.onTemperatureChange = this.onTemperatureChange.bind(this)
-  }
-
-  calculateWater(e) {
-    console.log(e.target);
-    this.setState({water : e.target.value}) 
+    this.calculateWater = this.calculateWater.bind(this);
   }
 
 
   onStepsChange(e) {
     console.log(e.target);
     this.setState({steps : e.target.value}) 
+    this.calculateWater()
   }
     onHeartChange(e) {
       console.log(e.target);
       this.setState({heart : e.target.value}) 
+      this.calculateWater()
     }
     onTemperatureChange(e) {
       console.log(e.target);
       this.setState({temperature : e.target.value}) 
+      this.calculateWater()
     }
+
+    calculateWater() {
+      let tempWater = 0;
+      let heartWater = 0;
+      let stepsWater = 0;
+  
+      if (this.state.temperature > 20) {
+        tempWater = (this.state.temperature - 20) * 0.02;
+      }
+  
+      if (this.state.heart > 120) {
+        heartWater = (this.state.heart - 120) * 0.0008;
+      }
+  
+      if (this.state.steps > 10000) {
+        stepsWater = (this.state.steps - 10000) * 0.00002;
+      }
+  
+      this.setState({ water: (1.5 + tempWater + heartWater + stepsWater).toFixed(2) });
+    }
+  
    
   render() {
     return (
       <div className="container-fluid">
         <div className="row">
           {/* Water */}
-          <Box icon="local_drink" color="#3A85FF" value={1.5} unit="L"></Box >
+          <Box icon="local_drink" color="#3A85FF" value={this.state.water} unit="L"></Box >
           {/* Steps */}
           <Box icon="directions_walk" color="black" value={this.state.steps} unit="steps"
           min={stepsMin} max={stepsMax} onChange={this.onStepsChange} ></Box >
