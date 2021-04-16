@@ -19,7 +19,7 @@ class App extends React.Component {
     this.selectAdd = this.selectAdd.bind(this);
     this.selectList = this.selectList.bind(this);
     this.selectPay = this.selectPay.bind(this);
- 
+    this.addItem = this.addItem.bind(this);
   
   }
 
@@ -36,7 +36,15 @@ class App extends React.Component {
     this.setState({ activeTab: 'Pay' });
   }
 
+addItem(name,price){
+  this.setState({
+    name: name.target.value,
+    price: price.target.value
+  })
+  console.log(this.state.items)
 
+
+}
 
 
   render() {
