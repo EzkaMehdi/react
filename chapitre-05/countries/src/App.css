@@ -23,7 +23,9 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+.img ,p{
+  width: 80px;
+}
 .App-link {
   color: #61dafb;
 }

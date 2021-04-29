@@ -1,7 +1,7 @@
 import React from 'react'
 import Bootstrap from '../src/bootstrap.min.css';
 import Button from './component/button.jsx'
-
+import Card from './component/card'
 class App extends React.Component {
 
   constructor() {
@@ -62,7 +62,7 @@ class App extends React.Component {
     return (
 
       <div>
-
+       {/* <card></card> */}
         <p>name : {this.state.name}</p>
         <p>capital : {this.state.capital}</p>
         <p>flag : <img className ="img" src = {this.state.flag} alt = "drapeau france" ></img>
