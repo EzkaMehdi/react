@@ -58,22 +58,44 @@ class App extends React.Component {
     </div>
     )}
 
-  render() {
-    return (
+    render() {
+      return (
+        <div>
+          
+          <div className="container">
+  
+            <Card flag={this.state.flag} name={this.state.name}
+              capital={this.state.capital} population={this.state.population} 
+              region={this.state.region}></Card>
+  
+          </div>
+          {this.renderButton()}
+        </div>
+  
+      )
+  
+    }
+  
+  
+  };
+  
+  export default App
+//   render() {
+//     return (
 
-      <div>
-       {/* <card></card> */}
-        <p>name : {this.state.name}</p>
-        <p>capital : {this.state.capital}</p>
-        <p>flag : <img className ="img" src = {this.state.flag} alt = "drapeau france" ></img>
-        </p>
-        <p>population : {this.state.population}</p>
-        <p>region : {this.state.region}</p>
-        {this.renderButton()}
-      </div>
+//       <div>
+//        {/* <card></card> */}
+//         <p>name : {this.state.name}</p>
+//         <p>capital : {this.state.capital}</p>
+//         <p>flag : <img className ="img" src = {this.state.flag} alt = "drapeau france" ></img>
+//         </p>
+//         <p>population : {this.state.population}</p>
+//         <p>region : {this.state.region}</p>
+//         {this.renderButton()}
+//       </div>
 
-    )
-  }
-}
+//     )
+//   }
+// }
 
-export default App;
+// export default App;
