@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
+import React from "react";
 
-class Card extends Component {
 
+
+class Card extends React.Component {
 
     constructor() {
         super()
@@ -11,7 +12,21 @@ class Card extends Component {
         }
     }
 
+    componentDidMount() {
+
+        fetch('https://raw.githubusercontent.com/konexio/digitous-assest/main/bakery/' + this.props.itemName + '.png')
+            .then(res => res.blob())
+            .then(urlBlob => URL.createObjectURL(urlBlob))
+            .then(urlImage => {
+                console.log(urlImage)
+                this.setState({
+                    image: urlImage
+                })
+            })
+    }
+
     render() {
+
         return (
             <div>
                 <button className='buttonImg'
@@ -22,4 +37,4 @@ class Card extends Component {
     }
 }
 
-export default Card
+export default Card;
